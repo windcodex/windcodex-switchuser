@@ -1,0 +1,332 @@
+# Copyright (C) 2026 WindCodex
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: WindCodex SwitchUser 1.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/windcodex-switchuser\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-07-29T06:01:39+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: windcodex-switchuser\n"
+
+#. Plugin Name of the plugin
+#: windcodex-switchuser.php
+msgid "WindCodex SwitchUser"
+msgstr ""
+
+#. Description of the plugin
+#: windcodex-switchuser.php
+msgid "Secure one-click user switching for WordPress and WooCommerce with admin-only access control."
+msgstr ""
+
+#. Author of the plugin
+#: windcodex-switchuser.php
+msgid "WindCodex"
+msgstr ""
+
+#. Author URI of the plugin
+#: windcodex-switchuser.php
+msgid "https://www.windcodex.com"
+msgstr ""
+
+#: admin/views/settings-page.php:20
+#: includes/class-switchuser-admin.php:32
+#: includes/class-switchuser-admin.php:33
+#: includes/class-switchuser-core.php:314
+msgid "SwitchUser"
+msgstr ""
+
+#: admin/views/settings-page.php:22
+#: admin/views/settings-page.php:50
+msgid "General"
+msgstr ""
+
+#: admin/views/settings-page.php:27
+msgid "Help"
+msgstr ""
+
+#: admin/views/settings-page.php:32
+msgid "Documentation"
+msgstr ""
+
+#: admin/views/settings-page.php:36
+msgid "Submit a Review"
+msgstr ""
+
+#: admin/views/settings-page.php:40
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: admin/views/settings-page.php:64
+msgid "Access Control"
+msgstr ""
+
+#: admin/views/settings-page.php:65
+msgid "Control who can start switch sessions and which accounts can be switched into."
+msgstr ""
+
+#: admin/views/settings-page.php:71
+msgid "Enable User Switching"
+msgstr ""
+
+#: admin/views/settings-page.php:72
+msgid "Master switch. When disabled nobody can start an impersonation session, regardless of other settings."
+msgstr ""
+
+#: admin/views/settings-page.php:84
+msgid "Block Switching Into Administrators"
+msgstr ""
+
+#: admin/views/settings-page.php:85
+msgid "Hard block: no switch session can impersonate an administrator account. Equal-or-higher privilege targets are also denied automatically."
+msgstr ""
+
+#: admin/views/settings-page.php:97
+msgid "Allowed Switcher Roles"
+msgstr ""
+
+#: admin/views/settings-page.php:98
+msgid "Only users with at least one checked role can initiate a switch session. Leave all unchecked to allow any user with the edit_users capability (WordPress default)."
+msgstr ""
+
+#: admin/views/settings-page.php:121
+msgid "Session Duration"
+msgstr ""
+
+#: admin/views/settings-page.php:122
+msgid "How many hours the signed switch cookie stays valid (1–168, up to 7 days). Default: 48."
+msgstr ""
+
+#: admin/views/settings-page.php:132
+msgid "hours"
+msgstr ""
+
+#: admin/views/settings-page.php:142
+msgid "Integration Points"
+msgstr ""
+
+#: admin/views/settings-page.php:143
+msgid "Choose where switch actions appear across WordPress and WooCommerce."
+msgstr ""
+
+#: admin/views/settings-page.php:149
+msgid "Profile Screen Switch"
+msgstr ""
+
+#: admin/views/settings-page.php:150
+msgid "Shows a \"Switch to this user\" button on the user profile edit screen."
+msgstr ""
+
+#: admin/views/settings-page.php:162
+msgid "WooCommerce Order Screen Switch"
+msgstr ""
+
+#: admin/views/settings-page.php:163
+msgid "Shows a \"Switch to customer\" meta box on WooCommerce order edit screens for quick impersonation."
+msgstr ""
+
+#: admin/views/settings-page.php:178
+msgid "Save Settings"
+msgstr ""
+
+#: admin/views/settings-page.php:179
+msgid "Reset to Defaults"
+msgstr ""
+
+#: includes/class-switchuser-admin.php:103
+msgid "Saving..."
+msgstr ""
+
+#: includes/class-switchuser-admin.php:104
+msgid "Settings saved!"
+msgstr ""
+
+#: includes/class-switchuser-admin.php:105
+msgid "Could not save. Please try again."
+msgstr ""
+
+#: includes/class-switchuser-admin.php:106
+msgid "Resetting..."
+msgstr ""
+
+#: includes/class-switchuser-admin.php:107
+msgid "Settings reset to defaults!"
+msgstr ""
+
+#: includes/class-switchuser-admin.php:108
+msgid "Reset all settings to their default values? This cannot be undone."
+msgstr ""
+
+#: includes/class-switchuser-admin.php:109
+msgid "Could not reset. Please try again."
+msgstr ""
+
+#: includes/class-switchuser-admin.php:117
+msgid "You do not have permission to access this page."
+msgstr ""
+
+#: includes/class-switchuser-admin.php:127
+#: includes/class-switchuser-admin.php:146
+#: includes/class-switchuser-core.php:607
+#: includes/class-switchuser-core.php:655
+#: includes/class-switchuser-core.php:677
+#: includes/class-switchuser-notices.php:102
+msgid "Permission denied."
+msgstr ""
+
+#: includes/class-switchuser-admin.php:157
+msgid "Settings"
+msgstr ""
+
+#: includes/class-switchuser-core.php:158
+#: includes/class-switchuser-core.php:662
+#: includes/class-switchuser-core.php:684
+msgid "Target user not found."
+msgstr ""
+
+#: includes/class-switchuser-core.php:162
+msgid "You are not allowed to switch to this user."
+msgstr ""
+
+#: includes/class-switchuser-core.php:207
+#: includes/class-switchuser-core.php:251
+msgid "No switch session found."
+msgstr ""
+
+#: includes/class-switchuser-core.php:215
+msgid "Original account no longer exists."
+msgstr ""
+
+#: includes/class-switchuser-core.php:288
+msgid "Switch To"
+msgstr ""
+
+#: includes/class-switchuser-core.php:315
+msgid "Impersonation"
+msgstr ""
+
+#: includes/class-switchuser-core.php:316
+msgid "Switch to this user"
+msgstr ""
+
+#: includes/class-switchuser-core.php:356
+#: includes/class-switchuser-core.php:367
+#: includes/class-switchuser-core.php:496
+msgid "Switch to Customer"
+msgstr ""
+
+#: includes/class-switchuser-core.php:418
+msgid "Order not found."
+msgstr ""
+
+#: includes/class-switchuser-core.php:424
+msgid "This order is from a guest customer."
+msgstr ""
+
+#: includes/class-switchuser-core.php:430
+msgid "Customer account not found."
+msgstr ""
+
+#: includes/class-switchuser-core.php:440
+msgid "User switching is <strong>disabled</strong>. Enable it in <a href=\""
+msgstr ""
+
+#: includes/class-switchuser-core.php:447
+msgid "Switching into administrator accounts is blocked by your settings."
+msgstr ""
+
+#: includes/class-switchuser-core.php:452
+msgid "You cannot switch into an account with equal or higher privileges than your own."
+msgstr ""
+
+#: includes/class-switchuser-core.php:456
+msgid "You do not have permission to switch to this customer."
+msgstr ""
+
+#. translators: %s: user display name
+#: includes/class-switchuser-core.php:511
+#, php-format
+msgid "Viewing as %s"
+msgstr ""
+
+#: includes/class-switchuser-core.php:535
+msgid "Switch Back"
+msgstr ""
+
+#: includes/class-switchuser-core.php:544
+msgid "Switch Off"
+msgstr ""
+
+#: includes/class-switchuser-core.php:557
+msgid "Switch User"
+msgstr ""
+
+#: includes/class-switchuser-core.php:595
+msgid "Search user..."
+msgstr ""
+
+#: includes/class-switchuser-core.php:596
+msgid "No matching users found."
+msgstr ""
+
+#: includes/class-switchuser-core.php:597
+msgid "Pick a result by number:"
+msgstr ""
+
+#: includes/class-switchuser-core.php:598
+msgid "Searching..."
+msgstr ""
+
+#: includes/class-switchuser-core.php:750
+msgid "You switched off your session."
+msgstr ""
+
+#: includes/class-switchuser-core.php:751
+msgid "Switch back now"
+msgstr ""
+
+#: includes/class-switchuser-notices.php:37
+msgid "SwitchUser Pro"
+msgstr ""
+
+#: includes/class-switchuser-notices.php:38
+msgid "— IP allowlists, locked accounts, idle timeout, scheduled switching windows, re-authentication, email alerts, per-switch notifications, and full audit dashboard."
+msgstr ""
+
+#: includes/class-switchuser-notices.php:41
+msgid "Explore SwitchUser Pro →"
+msgstr ""
+
+#: includes/class-switchuser-notices.php:71
+msgid "⭐ Is SwitchUser making account switching easier?"
+msgstr ""
+
+#: includes/class-switchuser-notices.php:74
+msgid "You've been using SwitchUser for 7 days — we hope it's saving you time when switching between customer accounts."
+msgstr ""
+
+#: includes/class-switchuser-notices.php:76
+msgid "If it's been helpful, a quick review on WordPress.org takes less than 2 minutes and helps thousands of other store owners find the plugin."
+msgstr ""
+
+#: includes/class-switchuser-notices.php:83
+msgid "⭐ Leave a Review"
+msgstr ""
+
+#: includes/class-switchuser-notices.php:86
+msgid "I already did ✓"
+msgstr ""
+
+#: includes/class-switchuser-notices.php:89
+msgid "Maybe Later"
+msgstr ""
+
+#. translators: %s: SwitchUser Pro plugin URL
+#: windcodex-switchuser.php:52
+msgid "<strong>WindCodex SwitchUser</strong> cannot be activated while <strong>SwitchUser Pro</strong> is active."
+msgstr ""
