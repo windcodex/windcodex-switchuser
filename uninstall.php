@@ -7,6 +7,18 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
+/*
+ * SwitchUser Pro shares this plugin's data. If Pro is active, this free plugin
+ * is just a deactivated leftover on disk - deleting it must not touch anything
+ * Pro is using (including in-progress switch locks and re-auth grants).
+ */
+if ( ! function_exists( 'is_plugin_active' ) ) {
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+}
+if ( is_plugin_active( 'windcodex-switchuser-pro/windcodex-switchuser-pro.php' ) ) {
+	return;
+}
+
 global $wpdb;
 if ( isset( $wpdb ) ) {
 	$switchuser_patterns = array(

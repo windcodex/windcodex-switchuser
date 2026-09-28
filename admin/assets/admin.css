@@ -1365,18 +1365,18 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 5px;
-	padding: 5px 13px;
-	border-radius: 7px;
-	border: 1.5px solid var(--sg-accent);
-	background: #fff;
+	padding: 7px 13px;
+	border: 1px solid var(--sg-accent);
+	border-radius: 10px;
+	background: var(--sg-surface);
 	color: var(--sg-accent);
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 600;
 	font-family: inherit;
 	line-height: 1;
-	cursor: pointer;
-	transition: border-color .15s, color .15s, background .15s;
 	white-space: nowrap;
+	cursor: pointer;
+	transition: background .15s ease;
 }
 .sg-help-btn .dashicons {
 	font-size: 18px;
@@ -1384,24 +1384,27 @@
 	height: 18px;
 }
 .sg-help-btn:hover,
-.sg-help-btn.is-open {
-	border-color: var(--sg-accent);
-	color: var(--sg-accent);
-	background: var(--sg-accent-light);
+.sg-help-btn.is-open { background: var(--sg-accent-light); }
+.sg-help-btn:focus-visible {
+	outline: 2px solid var(--sg-accent);
+	outline-offset: 2px;
+	box-shadow: none;
 }
 .sg-help-dropdown {
 	position: absolute;
 	top: calc(100% + 8px);
 	right: 0;
-	background: #fff;
-	border: 1.5px solid var(--sg-border);
-	border-radius: var(--sg-radius-sm);
-	box-shadow: 0 4px 20px rgba(0,0,0,.12);
-	min-width: 200px;
 	z-index: 9999;
+	min-width: 200px;
+	line-height: 1.4; /* the header card sets 32px; keep rows compact like Ops */
 	overflow: hidden;
+	background: var(--sg-surface);
+	border: 0.5px solid var(--sg-border);
+	border-radius: 10px;
+	box-shadow: 0 4px 20px rgba(15, 23, 42, .12), 0 1px 3px rgba(15, 23, 42, .05);
 }
-.sg-help-item {
+.sg-help-dropdown[hidden] { display: none; }
+.sg-help-dropdown .sg-help-item {
 	display: flex;
 	align-items: center;
 	gap: 10px;
@@ -1410,21 +1413,31 @@
 	font-weight: 500;
 	color: var(--sg-text);
 	text-decoration: none;
-	border-bottom: 1px solid var(--sg-border);
-	transition: background .12s, color .12s;
+	border-bottom: 0.5px solid var(--sg-border);
+	transition: background .12s ease, color .12s ease;
 }
-.sg-help-item:last-child { border-bottom: none; }
-.sg-help-item:hover {
-	background: var(--sg-accent-light);
+.sg-help-dropdown .sg-help-item:last-child { border-bottom: none; }
+.sg-help-dropdown .sg-help-item:hover,
+.sg-help-dropdown .sg-help-item:focus {
+	background: #F1F5F9;
 	color: var(--sg-accent);
+	box-shadow: none;
+	outline: none;
 }
-.sg-help-item-icon {
+.sg-help-dropdown .sg-help-item:focus-visible {
+	outline: 2px solid var(--sg-accent);
+	outline-offset: -2px;
+}
+.sg-help-dropdown .sg-help-item-icon {
 	font-size: 16px;
 	width: 16px;
 	height: 16px;
 	flex-shrink: 0;
 	color: var(--sg-text-3);
+	transition: color .12s ease;
 }
+.sg-help-dropdown .sg-help-item:hover .sg-help-item-icon,
+.sg-help-dropdown .sg-help-item:focus .sg-help-item-icon { color: var(--sg-accent); }
 
 /* ── Notices ────────────────────────────────────────────────────── */
 /* Self-contained CSS variables — review notice renders via         */
@@ -1559,4 +1572,3 @@
 	color: var(--sg-accent);
 	text-decoration: underline;
 }
-.sg-help-item:hover .sg-help-item-icon { color: var(--sg-accent); }

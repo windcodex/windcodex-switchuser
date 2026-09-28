@@ -1,9 +1,9 @@
-=== WindCodex SwitchUser – WordPress User Switching & Audit Log for WooCommerce ===
+=== WindCodex SwitchUser ===
 Contributors: windcodex
 Tags: user switching, login as user, login as customer, switch user, woocommerce
 Requires at least: 6.9
 Tested up to: 7.0
-Stable tag: 1.0.0
+Stable tag: 1.0.2
 Requires PHP: 8.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -171,6 +171,15 @@ In the free version, you can restrict who can perform switches by role. Per-user
 
 == Changelog ==
 
+= 1.0.2 =
+* Added: "Docs" link next to "Settings" on the Plugins screen.
+* Improved: Deleting SwitchUser while SwitchUser Pro is active no longer clears Pro's in-progress switch locks and re-authentication grants.
+* Added: Support Forum link in the Help menu.
+* Improved: Refreshed Help menu design. The menu now closes with the Escape key and is correctly announced to screen readers.
+
+= 1.0.1 =
+* Security fix: role-hierarchy checks are now Multisite-aware, preventing a lower-privilege user on one site from switching into an account that is an Administrator only on another site in the network.
+
 = 1.0.0 =
 * Initial release.
 * One-click user switching from Users list, profile, and WooCommerce order screens.
@@ -182,6 +191,12 @@ In the free version, you can restrict who can perform switches by role. Per-user
 * Multisite compatible. Translation-ready.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Adds a Docs link on the Plugins screen and Help menu improvements. No database changes – safe to update.
+
+= 1.0.1 =
+Security fix for Multisite installs using restricted switcher roles. Update recommended.
 
 = 1.0.0 =
 Initial release – no upgrade steps required.

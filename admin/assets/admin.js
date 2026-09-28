@@ -432,4 +432,12 @@
 	$helpDropdown.off( 'click.sgHelp' ).on( 'click.sgHelp', function ( e ) {
 		e.stopPropagation();
 	} );
+
+	// Escape closes the menu and hands focus back to the Help button.
+	$( document ).off( 'keydown.sgHelp' ).on( 'keydown.sgHelp', function ( e ) {
+		if ( 'Escape' === e.key && $helpDropdown.attr( 'hidden' ) === undefined ) {
+			$helpDropdown.attr( 'hidden', '' );
+			$helpBtn.removeClass( 'is-open' ).attr( 'aria-expanded', 'false' ).trigger( 'focus' );
+		}
+	} );
 })(jQuery);

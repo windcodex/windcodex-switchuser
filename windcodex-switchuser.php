@@ -4,7 +4,7 @@
  * Plugin Name:			WindCodex SwitchUser
  * Tagline:				Advanced User Switching with Admin-Only Access Control
  * Description:			Secure one-click user switching for WordPress and WooCommerce with admin-only access control.
- * Version:				1.0.0
+ * Version:				1.0.2
  * Author:				WindCodex
  * Author URI:			https://www.windcodex.com
  * License:				GPL v2 or later
@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SWITCHUSER_VERSION', '1.0.0' );
+define( 'SWITCHUSER_VERSION', '1.0.2' );
 define( 'SWITCHUSER_PLUGIN_FILE', __FILE__ );
 define( 'SWITCHUSER_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SWITCHUSER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );

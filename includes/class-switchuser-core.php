@@ -116,7 +116,9 @@ class SwitchUser_Core {
 			}
 		}
 
-		if ( 'yes' === ( $settings['block_admin_targets'] ?? 'no' ) && in_array( 'administrator', (array) $target->roles, true ) ) {
+		if ( 'yes' === ( $settings['block_admin_targets'] ?? 'no' )
+			&& ( in_array( 'administrator', (array) $target->roles, true ) || $this->user_is_admin_anywhere( $target ) )
+		) {
 			return false;
 		}
 
@@ -976,16 +978,17 @@ class SwitchUser_Core {
 			return false;
 		}
 
-		$actor_is_admin  = user_can( $actor, 'manage_options' );
-		$target_is_admin = user_can( $target, 'manage_options' );
+		$actor_is_admin  = user_can( $actor, 'manage_options' ) || $this->user_is_admin_anywhere( $actor );
+		$target_is_admin = user_can( $target, 'manage_options' ) || $this->user_is_admin_anywhere( $target );
 
 		// Site admins can switch into any account that lacks admin privileges.
 		if ( $actor_is_admin ) {
 			return ! $target_is_admin;
 		}
 
-		// Target must never be an admin or have user-management powers.
-		if ( $target_is_admin || user_can( $target, 'edit_users' ) ) {
+		// Target must never be an admin or have user-management powers,
+		// on this site or (on Multisite) on any site they belong to.
+		if ( $target_is_admin || user_can( $target, 'edit_users' ) || $this->user_has_cap_anywhere( $target, 'edit_users' ) ) {
 			return false;
 		}
 
@@ -1005,8 +1008,74 @@ class SwitchUser_Core {
 		return $actor_level > $target_level;
 	}
 
+	/**
+	 * On Multisite, a user's roles/capabilities are scoped to the current blog,
+	 * so checking $user->roles or user_can() alone can miss privileges the user
+	 * holds only on another site in the network. This walks every site the user
+	 * belongs to (plus network super admin status) to find their true rank.
+	 */
+	private function user_is_admin_anywhere( WP_User $user ): bool {
+		if ( is_super_admin( $user->ID ) ) {
+			return true;
+		}
+
+		if ( ! is_multisite() ) {
+			return false;
+		}
+
+		return $this->user_has_cap_anywhere( $user, 'manage_options' );
+	}
+
+	private function user_has_cap_anywhere( WP_User $user, string $cap ): bool {
+		if ( user_can( $user, $cap ) ) {
+			return true;
+		}
+
+		if ( ! is_multisite() ) {
+			return false;
+		}
+
+		$found = false;
+		foreach ( get_blogs_of_user( $user->ID ) as $site ) {
+			$site_id = (int) $site->userblog_id;
+			if ( $site_id === get_current_blog_id() ) {
+				continue;
+			}
+			switch_to_blog( $site_id );
+			$site_user = new WP_User( $user->ID );
+			if ( user_can( $site_user, $cap ) ) {
+				$found = true;
+			}
+			restore_current_blog();
+			if ( $found ) {
+				break;
+			}
+		}
+
+		return $found;
+	}
+
 	private function get_user_role_level( WP_User $user ): int {
 		$wp_roles  = wp_roles();
+		$max_level = $this->get_user_role_level_on_current_site( $user, $wp_roles );
+
+		if ( is_multisite() ) {
+			foreach ( get_blogs_of_user( $user->ID ) as $site ) {
+				$site_id = (int) $site->userblog_id;
+				if ( $site_id === get_current_blog_id() ) {
+					continue;
+				}
+				switch_to_blog( $site_id );
+				$site_user = new WP_User( $user->ID );
+				$max_level = max( $max_level, $this->get_user_role_level_on_current_site( $site_user, wp_roles() ) );
+				restore_current_blog();
+			}
+		}
+
+		return $max_level;
+	}
+
+	private function get_user_role_level_on_current_site( WP_User $user, WP_Roles $wp_roles ): int {
 		$max_level = 0;
 		foreach ( (array) $user->roles as $role_slug ) {
 			$role = $wp_roles->get_role( $role_slug );

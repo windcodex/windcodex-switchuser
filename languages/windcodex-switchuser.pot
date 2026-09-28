@@ -2,7 +2,7 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WindCodex SwitchUser 1.0.1\n"
+"Project-Id-Version: WindCodex SwitchUser 1.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/windcodex-switchuser\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -329,4 +329,12 @@ msgstr ""
 #. translators: %s: SwitchUser Pro plugin URL
 #: windcodex-switchuser.php:52
 msgid "<strong>WindCodex SwitchUser</strong> cannot be activated while <strong>SwitchUser Pro</strong> is active."
+msgstr ""
+
+#: includes/class-switchuser-admin.php:158
+msgid "Docs"
+msgstr ""
+
+#: admin/views/settings-page.php:36
+msgid "Support Forum"
 msgstr ""

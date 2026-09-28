@@ -155,7 +155,8 @@ class SwitchUser_Admin {
 
 	public function plugin_action_links( array $links ): array {
 		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=switchuser-settings' ) ) . '">' . esc_html__( 'Settings', 'windcodex-switchuser' ) . '</a>';
-		array_unshift( $links, $settings_link );
+		$docs_link     = '<a href="' . esc_url( 'https://docs.windcodex.com/docs/switchuser' ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Docs', 'windcodex-switchuser' ) . '</a>';
+		array_unshift( $links, $settings_link, $docs_link );
 		return $links;
 	}
 }

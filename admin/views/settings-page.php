@@ -22,7 +22,7 @@ $switchuser_switcher_roles = '' !== trim( $switchuser_switcher_csv )
 			<span id="sg-breadcrumb-current"><?php esc_html_e( 'General', 'windcodex-switchuser' ); ?></span>
 		</div>
 		<div class="sg-help-wrap">
-			<button type="button" class="sg-help-btn" id="sg-help-btn" aria-expanded="false" aria-haspopup="true">
+			<button type="button" class="sg-help-btn" id="sg-help-btn" aria-expanded="false" aria-haspopup="true" aria-controls="sg-help-dropdown">
 				<span class="dashicons dashicons-editor-help"></span>
 				<?php esc_html_e( 'Help', 'windcodex-switchuser' ); ?>
 			</button>
@@ -30,6 +30,10 @@ $switchuser_switcher_roles = '' !== trim( $switchuser_switcher_csv )
 				<a href="https://docs.windcodex.com/docs/switchuser" target="_blank" rel="noopener" class="sg-help-item">
 					<span class="sg-help-item-icon dashicons dashicons-media-document"></span>
 					<?php esc_html_e( 'Documentation', 'windcodex-switchuser' ); ?>
+				</a>
+				<a href="https://wordpress.org/support/plugin/windcodex-switchuser/" target="_blank" rel="noopener" class="sg-help-item">
+					<span class="sg-help-item-icon dashicons dashicons-sos"></span>
+					<?php esc_html_e( 'Support Forum', 'windcodex-switchuser' ); ?>
 				</a>
 				<a href="https://wordpress.org/support/plugin/windcodex-switchuser/reviews/#new-post" target="_blank" rel="noopener" class="sg-help-item">
 					<span class="sg-help-item-icon dashicons dashicons-star-filled"></span>
