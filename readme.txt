@@ -1,4 +1,4 @@
-=== WindCodex SwitchUser ===
+=== WindCodex SwitchUser – User Switching and Login as Customer for WooCommerce ===
 Contributors: windcodex
 Tags: user switching, login as user, login as customer, switch user, woocommerce
 Requires at least: 6.9
@@ -8,7 +8,7 @@ Requires PHP: 8.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Switch between WordPress user accounts in one click – no passwords needed. Secure sessions, role protection, and instant switch-back.
+Switch to any user or log in as a customer in one click – no passwords. See exactly what they see, then switch back. Audit log included.
 
 == Description ==
 
