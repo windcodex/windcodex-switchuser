@@ -2,6 +2,7 @@
 /**
  * @wordpress-plugin
  * Plugin Name:			WindCodex SwitchUser
+ * Plugin URI:          https://windcodex.com/product/woocommerce-user-switching-plugin/
  * Tagline:				Advanced User Switching with Admin-Only Access Control
  * Description:			Secure one-click user switching for WordPress and WooCommerce with admin-only access control.
  * Version:				1.0.2
